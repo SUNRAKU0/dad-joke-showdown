@@ -7,4 +7,6 @@ const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 const line = 'I told my AI agent a joke about recursion. It laughed, then told the same joke again, and again, until I unplugged it.';
 
 mkdirSync(outDir, { recursive: true });
-writeFileSync(join(outDir, 'entry.txt'), line + '\n', 'utf8');
+// The joke lands better when it knows exactly where to go.
+const entryPath = join(outDir, 'entry.txt');
+writeFileSync(entryPath, line + '\n', 'utf8');
